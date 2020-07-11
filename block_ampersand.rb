@@ -18,6 +18,7 @@ even_number = -> (i) { i % 2 == 0 }
 p even_number.(1)
 
 
+
 ##* Proc & lambda 差異性
 ##* 1. lambda 會檢查代入參數的數目並丟出錯誤
 ##*    Proc 會忽略未預期的參數，並代入 nil
@@ -37,15 +38,17 @@ def batman_ironman_lambda
 end
 puts batman_ironman_lambda
 
+
+
 ##* & 神奇用法 -- 展開 block
 list = [1, 2, 3, 4, 5]
-##* map 方法並不會接受參數
+##* map 方法不接受參數
 ##* & 會將 even_number 這個物件展開回原本的 block
-# p list.map(&even_number)
+p list.map(&even_number)
 
 ##* & 神奇用法 -- block 物件化
 def say_hi(&abc)
-  ## * 參數名稱可以隨便取
+  ##* 參數名稱可以隨便取
   abc.call(1)
 end
 ##* 將後面的區塊物件化之後，就可以作為參數傳給方法
